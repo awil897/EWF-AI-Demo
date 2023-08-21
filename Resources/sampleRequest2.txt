@@ -1,0 +1,1 @@
+I have the following variables: accountArray=“2524,D,5-Pending Closed,Primary,3727,D,0-Escheat,Primary,” I want to extract the third value and assign it to a variable like : AcctStat = 5-Pending Closed What built-in VisualBasic method or methods would be needed to accomplish this?

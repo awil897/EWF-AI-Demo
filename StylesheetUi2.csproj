@@ -4,15 +4,34 @@
     <OutputType>WinExe</OutputType>
     <TargetFramework>net7.0-windows</TargetFramework>
     <ApplicationManifest>app.manifest</ApplicationManifest>
-    <ApplicationIcon>wpfui-icon.ico</ApplicationIcon>
+    <ApplicationIcon>Assets\favicon.ico</ApplicationIcon>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
     <UseWPF>true</UseWPF>
-    <AssemblyName>EWF AI Demo Tool</AssemblyName>
+    <AssemblyName>EWF - AI Demo Tool</AssemblyName>
+    <SignAssembly>False</SignAssembly>
+    <PackageIcon>Monogram.png</PackageIcon>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
+    <DebugType>embedded</DebugType>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <DebugType>embedded</DebugType>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="wpfui-icon.ico" />
+    <Content Include="Assets\favicon.ico" />
   </ItemGroup>
 
   <ItemGroup>
@@ -63,10 +82,18 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="Assets\Monogram.png">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
     <None Update="Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
+
+  <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+    <Exec Command="if $(ConfigurationName) == Release (powershell.exe -command &quot;&amp; 'E:\AzureCodeSigning.ps1' -BasePath '$(TargetDir)' -IncludedFiles 'EWF - AI Demo Tool.exe,EWF - AI Demo Tool.dll'&quot;)&#xD;&#xA;if $(ConfigurationName) == Release (powershell.exe Compress-Archive -Path '$(TargetDir)*.*' -DestinationPath 'E:\Out\EWF - AI Demo Tool - $(Platform).zip' -Force)" />
+  </Target>
 
 </Project>

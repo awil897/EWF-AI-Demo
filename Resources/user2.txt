@@ -1,0 +1,7 @@
+I have the following variables:
+someString = "mmousehst@jhahosting.com"
+
+And I need to translate those variables:
+newString = "mmousehst@jackhenry.com"
+
+What built-in Visual Basic method or methods would be needed to translate the initial variable to receive the translated variable?

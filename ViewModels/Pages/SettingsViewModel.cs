@@ -6,14 +6,8 @@
 using Newtonsoft.Json.Linq;
 using RestSharp;
 using System.Net;
-using System.Net.Http;
-using System.Windows.Input;
 using Wpf.Ui.Controls;
-using StylesheetUi2.Helpers;
 using StylesheetUi2.Models;
-using StylesheetUi2.Views.Windows;
-using Wpf.Ui.Common;
-using System.ComponentModel;
 using StylesheetUi2.Services;
 using System.Diagnostics;
 using System.Collections.ObjectModel;

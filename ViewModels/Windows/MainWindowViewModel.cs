@@ -4,7 +4,6 @@
 // All Rights Reserved.
 
 using System.Collections.ObjectModel;
-using System.Xml.Xsl;
 using Wpf.Ui.Common;
 using Wpf.Ui.Controls;
 

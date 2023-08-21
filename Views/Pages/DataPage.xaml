@@ -6,6 +6,7 @@
     xmlns:local="clr-namespace:StylesheetUi2.Views.Pages"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     xmlns:models="clr-namespace:StylesheetUi2.Models"
+    xmlns:mdxam="clr-namespace:MdXaml;assembly=MdXaml"
     xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
     Title="DataPage"
     d:DataContext="{d:DesignInstance local:DataPage,
@@ -19,7 +20,123 @@
     mc:Ignorable="d"
     FontFamily="/Resources/#Poppins">
 
-    <Grid>
-        <ui:TextBlock Margin="50,50,10,10" FontWeight="Bold">Coming Soon</ui:TextBlock>
+    <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*" />
+            <ColumnDefinition Width="0.6*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <StackPanel
+        Grid.Column="0"
+        Grid.Row="0"
+        Margin="5,20,5,0">
+            <TextBlock 
+            FontSize="14"
+            FontWeight="Bold"
+            FontFamily="/Resources/#Poppins">
+            Original Variables
+            </TextBlock>
+
+        </StackPanel>
+        <StackPanel
+        Grid.Column="0"
+        Grid.Row="1"
+        Margin="5,5,5,0">
+            <ui:TextBox
+            Text="{Binding ViewModel.OriginalVariables, Mode=TwoWay}"
+            FontFamily="/Resources/#Poppins"
+            PlaceholderEnabled="True"
+            PlaceholderText='someString = "mmousehst@jhahosting.com"'
+            TextWrapping="Wrap"
+            AcceptsReturn="True"
+            FontSize="12"
+            VerticalScrollBarVisibility="Visible"
+            Height="75"
+            Margin="0,5,0,0">
+            </ui:TextBox>
+            <ui:TextBlock 
+            FontFamily="/Resources/#Poppins"
+            FontSize="14"
+            FontWeight="Bold"
+            Margin="0,5,0,0">
+            Output Variable
+            </ui:TextBlock>
+
+            <ui:TextBox
+                FontFamily="/Resources/#Poppins"
+                Text="{Binding ViewModel.TranslatedVariables, Mode=TwoWay}"
+                PlaceholderEnabled="True"
+                PlaceholderText='newString = "mmousehst@jackhenry.com"'
+                TextWrapping="Wrap"
+                FontSize="12"
+                AcceptsReturn="True"
+                VerticalScrollBarVisibility="Visible"
+                Height="75"
+                Margin="0,5,0,0">
+            </ui:TextBox>
+            <ui:TextBlock 
+                FontFamily="/Resources/#Poppins"
+                FontSize="14"
+                FontWeight="Bold"
+                Margin="0,5,0,0">
+                Explanation
+            </ui:TextBlock>
+
+            <ui:TextBox
+                FontFamily="/Resources/#Poppins"
+                Text="{Binding ViewModel.ExplanationVariables, Mode=TwoWay}"
+                PlaceholderEnabled="True"
+                PlaceholderText="I want to replace the text in the original &#x0a;variable so it looks like the output variable"
+                TextWrapping="Wrap"
+                AcceptsReturn="True"
+                FontSize="12"
+                VerticalScrollBarVisibility="Visible"
+                Height="75"
+                Margin="0,5,0,0">
+            </ui:TextBox>
+        </StackPanel>
+        <ui:TextBlock 
+            Grid.Column="1"
+            Grid.Row="0"
+            Margin="10,20,5,0"
+            FontSize="14"
+            FontWeight="Bold"
+            FontFamily="/Resources/#Poppins">
+            Response
+        </ui:TextBlock>
+
+        <DockPanel
+        Grid.Column="1"
+        Grid.Row="1"
+        
+        Margin="10,5,0,0"
+        MaxHeight="430">
+            <mdxam:MarkdownScrollViewer 
+            MarkdownStyleName="GithubLike"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            FontFamily="/Resources/#Poppins"
+            Background="#FF2D2D2D"
+            Margin="0,10,-10,0"
+            ClickAction="DisplayWithRelativePath"
+            Markdown="{Binding ViewModel.MarkdownDocVariables}" Foreground="White"/>
+        </DockPanel>
+
+        <ui:Button
+        Grid.Column="0"
+        FontFamily="/Resources/#Poppins"
+        Grid.Row="2"
+        Command="{Binding ViewModel.LoadApiKeyCommand, Mode=OneWay}"
+        Name="TestButton"
+        IsEnabled="{Binding ViewModel.IsMasterEnabled}"
+        Content="Generate"
+        HorizontalAlignment="Center"
+        VerticalAlignment="Bottom"
+        Margin="0,5,0,5"
+        Icon="Fluent24" />
     </Grid>
 </Page>
