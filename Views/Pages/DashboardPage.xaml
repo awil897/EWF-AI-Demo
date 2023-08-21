@@ -1,0 +1,121 @@
+﻿<Page
+    x:Class="StylesheetUi2.Views.Pages.DashboardPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:StylesheetUi2.Views.Pages"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:ui="http://schemas.lepo.co/wpfui/2022/xaml"
+    xmlns:mdxam="clr-namespace:MdXaml;assembly=MdXaml"
+    Title="DashboardPage"
+    d:DataContext="{d:DesignInstance local:DashboardPage,
+                                     IsDesignTimeCreatable=False}"
+    d:DesignHeight="450"
+    d:DesignWidth="800"
+    ui:Design.Background="{DynamicResource ApplicationBackgroundBrush}"
+    ui:Design.Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    Foreground="{DynamicResource TextFillColorPrimaryBrush}"
+    mc:Ignorable="d"
+    FontFamily="/Resources/#Poppins">
+    
+
+    <Grid VerticalAlignment="Top">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0.4*" />
+            <ColumnDefinition Width="0.6*" />
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.1*" />
+            <RowDefinition Height="0.8*" />
+            <RowDefinition Height="0.1*" />
+        </Grid.RowDefinitions>
+        <StackPanel
+            Grid.Column="0"
+            Grid.Row="0"
+            Margin="5,20,5,0">
+            <TextBlock 
+                FontSize="14"
+                FontWeight="Bold"
+                FontFamily="/Resources/#Poppins">
+                Request
+            </TextBlock>
+            
+        </StackPanel>
+        <StackPanel
+            Grid.Column="0"
+            Grid.Row="1"
+            Margin="5,5,5,0">
+            <ui:TextBox
+                Text="{Binding ViewModel.RequestString, Mode=TwoWay}"
+                FontFamily="/Resources/#Poppins"
+                PlaceholderEnabled="True"
+                
+                PlaceholderText="Enter your request here..."
+                TextWrapping="Wrap"
+                AcceptsReturn="True"
+                VerticalScrollBarVisibility="Visible"
+                Height="75"
+                Margin="0,5,0,0">
+            </ui:TextBox>
+            <TextBlock 
+                FontFamily="/Resources/#Poppins"
+                FontSize="14"
+                FontWeight="Bold"
+                Margin="0,5,0,0">
+                DebugRawResponse
+            </TextBlock>
+
+            <ui:TextBox
+                FontFamily="/Resources/#Poppins"
+                Text="{Binding ViewModel.DebugRawResponse, Mode=TwoWay}"
+                TextWrapping="NoWrap"
+                PlaceholderEnabled="True"
+                PlaceholderText="And paste in the entire DebugRawResponse &#x0a;from EWF or testing tool here..."
+                AcceptsReturn="True"
+                Height="380"
+                Margin="0,5,0,0"
+                VerticalScrollBarVisibility="Visible"
+                HorizontalScrollBarVisibility="Visible">
+            </ui:TextBox>
+        </StackPanel>
+        <TextBlock 
+                Grid.Column="1"
+                Grid.Row="0"
+                Margin="10,20,5,0"
+                FontSize="14"
+                FontWeight="Bold"
+                FontFamily="/Resources/#Poppins">
+                Response
+            </TextBlock>
+
+        <DockPanel
+            Grid.Column="1"
+            Grid.Row="1"
+            
+            Margin="10,5,0,0"
+            MaxHeight="430">
+            <mdxam:MarkdownScrollViewer 
+                MarkdownStyleName="GithubLike"
+                VerticalAlignment="Stretch"
+                HorizontalAlignment="Stretch"
+                FontFamily="/Resources/#Poppins"
+                Background="#FF2D2D2D"
+                Margin="0,-15,-20,0"
+                ClickAction="DisplayWithRelativePath"
+                Markdown="{Binding ViewModel.MarkdownDoc}" Foreground="White"/>
+        </DockPanel>
+
+        <ui:Button
+            Grid.Column="0"
+            FontFamily="/Resources/#Poppins"
+            Grid.Row="2"
+            Command="{Binding ViewModel.LoadApiKeyCommand, Mode=OneWay}"
+            Name="TestButton"
+            IsEnabled="{Binding ViewModel.IsMasterEnabled}"
+            Content="Generate"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Bottom"
+            Margin="0,5,0,5"
+            Icon="Fluent24" />
+    </Grid>
+</Page>

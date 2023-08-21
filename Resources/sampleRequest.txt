@@ -1,0 +1,148 @@
+For the reponse below, I need to assign all the CustId node values to a variable named CustomerIdNumbers
+<s:Envelope xmlns:s=http://schemas.xmlsoap.org/soap/envelope/ xmlns:u=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd>
+    <s:Header>
+        <o:Security s:mustUnderstand="1" xmlns:o=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd>
+            <u:Timestamp u:Id="_0">
+                <u:Created>2023-08-05T01:02:44.765Z</u:Created>
+                <u:Expires>2023-08-05T01:07:44.765Z</u:Expires>
+            </u:Timestamp>
+        </o:Security>
+    </s:Header>
+    <s:Body>
+        <CustSrchResponse
+            xmlns=http://jackhenry.com/jxchange/TPG/2008
+            xmlns:xsi=http://www.w3.org/2001/XMLSchema-instance>
+            <SrchMsgRsHdr>
+                <jXchangeHdr>
+                    <JxVer>R2022.1</JxVer>
+                    <AuditUsrId>jXsupport</AuditUsrId>
+                    <AuditWsId>TestTool</AuditWsId>
+                    <ConsumerName>JackHenry</ConsumerName>
+                    <ConsumerProd>JXTEST</ConsumerProd>
+                    <Ver_1></Ver_1>
+                    <jXLogTrackingId>VENDORNAME-[GUID_GOES_HERE]</jXLogTrackingId>
+                    <Ver_2></Ver_2>
+                    <InstRtId>222000777</InstRtId>
+                    <InstEnv>PROD</InstEnv>
+                    <Ver_3></Ver_3>
+                    <BusCorrelId>b53f762e-33d4-4c1a-b4d3-6180ca6f4f4c</BusCorrelId>
+                    <Ver_4></Ver_4>
+                    <Ver_5></Ver_5>
+                </jXchangeHdr>
+                <SentRec>2</SentRec>
+                <MoreRec>true</MoreRec>
+                <Cursor>3</Cursor>
+                <TotRec>11</TotRec>
+                <Ver_1></Ver_1>
+            </SrchMsgRsHdr>
+            <CustSrchRecArray>
+                <CustSrchRec>
+                    <CustId>S000015</CustId>
+                    <PersonName>
+                        <ComName>Alice Lou Smith</ComName>
+                        <FirstName>Alice</FirstName>
+                        <MiddleName>Lou</MiddleName>
+                        <LastName>Smith</LastName>
+                        <Ver_1></Ver_1>
+                    </PersonName>
+                    <AccountId>
+                        <AcctId>0</AcctId>
+                        <AcctType></AcctType>
+                        <Ver_1></Ver_1>
+                    </AccountId>
+                    <TINCode>I</TINCode>
+                    <TaxId MaskVal="453-15-8710">453158710</TaxId>
+                    <CustType>I</CustType>
+                    <Ver_1></Ver_1>
+                    <IntnetFinInstIdArray>
+                        <IntnetFinInstIdArrayInfo>
+                            <IntnetFinInstId>788300000356</IntnetFinInstId>
+                            <Ver_1></Ver_1>
+                        </IntnetFinInstIdArrayInfo>
+                    </IntnetFinInstIdArray>
+                    <Ver_2></Ver_2>
+                    <Addr>
+                        <FreeFormAddrArray>
+                            <AddrLineInfo>
+                                <AddrLine>Alice Lou Smith</AddrLine>
+                                <Ver_1></Ver_1>
+                            </AddrLineInfo>
+                            <AddrLineInfo>
+                                <AddrLine>7400 CAHABA VALLEY RD</AddrLine>
+                                <Ver_1></Ver_1>
+                            </AddrLineInfo>
+                            <AddrLineInfo>
+                                <AddrLine>BIRMINGHAM AL 35242-6303</AddrLine>
+                                <Ver_1></Ver_1>
+                            </AddrLineInfo>
+                        </FreeFormAddrArray>
+                        <StreetAddr1>7400 CAHABA VALLEY RD</StreetAddr1>
+                        <City>BIRMINGHAM</City>
+                        <StateProv>Alabama</StateProv>
+                        <StateCode>AL</StateCode>
+                        <PostalCode>352426303</PostalCode>
+                        <FornAddr>N</FornAddr>
+                        <Ver_1></Ver_1>
+                        <Ver_2></Ver_2>
+                    </Addr>
+                    <Ver_3></Ver_3>
+                    <Ver_4></Ver_4>
+                    <Ver_5></Ver_5>
+                </CustSrchRec>
+                <CustSrchRec>
+                    <CustId>SAA0008</CustId>
+                    <PersonName>
+                        <ComName>Becky Branch Smith</ComName>
+                        <FirstName>Becky</FirstName>
+                        <MiddleName>Branch</MiddleName>
+                        <LastName>Smith</LastName>
+                        <Ver_1></Ver_1>
+                    </PersonName>
+                    <AccountId>
+                        <AcctId>0</AcctId>
+                        <AcctType></AcctType>
+                        <Ver_1></Ver_1>
+                    </AccountId>
+                    <TINCode>I</TINCode>
+                    <TaxId MaskVal="852-85-2852">852852852</TaxId>
+                    <CustType>I</CustType>
+                    <Ver_1></Ver_1>
+                    <Ver_2></Ver_2>
+                    <Addr>
+                        <FreeFormAddrArray>
+                            <AddrLineInfo>
+                                <AddrLine>Becky Branch Smith</AddrLine>
+                                <Ver_1></Ver_1>
+                            </AddrLineInfo>
+                            <AddrLineInfo>
+                                <AddrLine>852 Sunshine Street</AddrLine>
+                                <Ver_1></Ver_1>
+                            </AddrLineInfo>
+                            <AddrLineInfo>
+                                <AddrLine>Apt 2</AddrLine>
+                                <Ver_1></Ver_1>
+                            </AddrLineInfo>
+                            <AddrLineInfo>
+                                <AddrLine>Springfield MO 65802</AddrLine>
+                                <Ver_1></Ver_1>
+                            </AddrLineInfo>
+                        </FreeFormAddrArray>
+                        <StreetAddr1>852 Sunshine Street</StreetAddr1>
+                        <StreetAddr2>Apt 2</StreetAddr2>
+                        <City>Springfield</City>
+                        <StateProv>Missouri</StateProv>
+                        <StateCode>MO</StateCode>
+                        <PostalCode>658020000</PostalCode>
+                        <FornAddr>N</FornAddr>
+                        <Ver_1></Ver_1>
+                        <Ver_2></Ver_2>
+                    </Addr>
+                    <Ver_3></Ver_3>
+                    <Ver_4></Ver_4>
+                    <Ver_5></Ver_5>
+                </CustSrchRec>
+            </CustSrchRecArray>
+            <Ver_1></Ver_1>
+        </CustSrchResponse>
+    </s:Body>
+</s:Envelope>

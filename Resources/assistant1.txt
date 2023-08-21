@@ -1,0 +1,27 @@
+Ok, here is the XSLT stylesheet that should provide the functionality you're looking for:
+<?xml version='1.0'?>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:a="http://jackhenry.com/jxchange/TPG/2008" xmlns:s="http://www.w3.org/2003/05/soap-envelope">
+    <xsl:template match="/">
+        <WorkflowTranslatedResponse>
+            <VariableMap>
+                <ActivityMapVariable>
+                    <VariableName>SynergyIndexes</VariableName>
+                    <Value>
+                        <xsl:for-each select="//a:SvcDictInfoRec/a:ElemCanocArray/a:ElemCanocRec[a:ElemCanocVal='Index']">
+                            <xsl:value-of select="a:ElemCanocValDesc"/>
+                            <xsl:if test="position() != last()">
+                                <xsl:text>&#10;</xsl:text>
+                            </xsl:if>
+                        </xsl:for-each>
+                    </Value>
+                </ActivityMapVariable>
+            </VariableMap>
+        </WorkflowTranslatedResponse>
+    </xsl:template>
+</xsl:stylesheet>
+
+In this XSLT:
+
+The xsl:for-each element iterates over each ElemCanocRec element where ElemCanocVal equals 'Index'.
+The xsl:value-of element gets the value of ElemCanocValDesc for each ElemCanocRec in the iteration.
+The xsl:if element tests whether the current ElemCanocRec is the last one. If it isn't, a newline (&#10;) is appended to the value. This ensures that the newline is not added after the last value.
