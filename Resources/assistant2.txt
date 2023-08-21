@@ -1,0 +1,9 @@
+To translate the string "mmousehst@jhahosting.com" to "mmousehst@jackhenry.com", you can use the `Replace` function in Visual Basic to replace the substring "jhahosting" with "jackhenry".
+
+Here's the code you would need (only the right side of the assignment as per your instructions):
+
+```vb.net
+Replace(someString, "jhahosting", "jackhenry")
+```
+
+So, you'd use the above code to get the desired translation for your `newString`.

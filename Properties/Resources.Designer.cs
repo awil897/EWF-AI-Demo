@@ -78,6 +78,23 @@ namespace StylesheetUi2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to To translate the string &quot;mmousehst@jhahosting.com&quot; to &quot;mmousehst@jackhenry.com&quot;, you can use the `Replace` function in Visual Basic to replace the substring &quot;jhahosting&quot; with &quot;jackhenry&quot;.
+        ///
+        ///Here&apos;s the code you would need (only the right side of the assignment as per your instructions):
+        ///
+        ///```vb.net
+        ///Replace(someString, &quot;jhahosting&quot;, &quot;jackhenry&quot;)
+        ///```
+        ///
+        ///So, you&apos;d use the above code to get the desired translation for your `newString`..
+        /// </summary>
+        internal static string assistant2 {
+            get {
+                return ResourceManager.GetString("assistant2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to For the reponse below, I need to assign all the CustId node values to a variable named CustomerIdNumbers
         ///&lt;s:Envelope xmlns:s=http://schemas.xmlsoap.org/soap/envelope/ xmlns:u=http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd&gt;
         ///    &lt;s:Header&gt;
@@ -93,11 +110,29 @@ namespace StylesheetUi2.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to I have the following variables: accountArray=“2524,D,5-Pending Closed,Primary,3727,D,0-Escheat,Primary,” I want to extract the third value and assign it to a variable like : AcctStat = 5-Pending Closed What built-in VisualBasic method or methods would be needed to accomplish this?.
+        /// </summary>
+        internal static string sampleRequest2 {
+            get {
+                return ResourceManager.GetString("sampleRequest2", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You are a program that helps a user work with a SOAP API that returns XML responses. An XSLT stylesheet is used to transform the response so that variables are defined and assigned values from the original response. You will help the user identify which elements from the reponse need to be assigned to a variable, and generate an XSLT Stylesheet that will assign the desired variables. Your two main functions are only helping the user pick parts of the original XML reponse that they want assigned to a variabl [rest of string was truncated]&quot;;.
         /// </summary>
         internal static string system {
             get {
                 return ResourceManager.GetString("system", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to You are a program that helps end-users translate variables using the VisualBasic built in methods from .NET Framework 4.8. The user would supply what the initials variable names and values are, as well as the variable name and what they want the resulting value to be, along with a quick explanation of what they want. You will give the user the VBScript needing to translate the intial variable/variables to the end result variable. The VB.NET steps must given to the user in both a combined single line, and in [rest of string was truncated]&quot;;.
+        /// </summary>
+        internal static string system2 {
+            get {
+                return ResourceManager.GetString("system2", resourceCulture);
             }
         }
         
@@ -108,6 +143,21 @@ namespace StylesheetUi2.Properties {
         internal static string user1 {
             get {
                 return ResourceManager.GetString("user1", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to I have the following variables:
+        ///someString = &quot;mmousehst@jhahosting.com&quot;
+        ///
+        ///And I need to translate those variables:
+        ///newString = &quot;mmousehst@jackhenry.com&quot;
+        ///
+        ///What built-in Visual Basic method or methods would be needed to translate the initial variable to receive the translated variable?.
+        /// </summary>
+        internal static string user2 {
+            get {
+                return ResourceManager.GetString("user2", resourceCulture);
             }
         }
     }
